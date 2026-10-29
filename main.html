@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #ffeef8 0%, #e6f7ff 100%);
+        color: #4a4a4a;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-card {
+        background-color: #ffffff;
+        max-width: 700px;
+        width: 100%;
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: 0 15px 30px rgba(255, 105, 180, 0.15);
+        border: 4px solid #ffd1dc;
+    }
+
+    
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        color: #ff5e97;
+        text-shadow: 2px 2px #ffe2eb;
+        margin-bottom: 10px;
+    }
+
+    
+    header p::first-letter {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ffb703;
+        float: left;
+        margin-right: 8px;
+        line-height: 1;
+        font-family: 'Georgia', serif;
+    }
+
+    header p {
+        font-size: 1.1rem;
+        color: #7a7a7a;
+        line-height: 1.6;
+    }
+
+    
+    .menu-section h2 {
+        color: #48cae4;
+        border-bottom: 3px dashed #90e0ef;
+        padding-bottom: 8px;
+        margin: 30px 0 20px 0;
+        font-size: 1.8rem;
+    }
+
+    .menu-list>.menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        margin-bottom: 12px;
+        background-color: #fff9fb;
+        border-radius: 15px;
+        border-left: 5px solid #ff9ebe;
+        transition: all 0.3s ease;
+    }
+
+    
+    .menu-list>.menu-item:hover {
+        transform: translateX(10px) scale(1.02);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        background-color: #fff0f5;
+    }
+
+    .flavor-info h3 {
+        color: #ff5e97;
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+
+    .flavor-info p {
+        font-size: 0.9rem;
+        color: #8c8c8c;
+    }
+
+    .price {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #2a9d8f;
+        background: #e8f5e9;
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
+
+    
+    .menu-item[data-status="special"] {
+        background: linear-gradient(135deg, #fff3b0 0%, #ffd1dc 100%);
+        border-left: 5px solid #ffb703;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .menu-item[data-status="special"]::after {
+        content: "🔥 Chef's Choice";
+        position: absolute;
+        top: 0;
+        right: 15px;
+        background-color: #ffb703;
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 2px 8px;
+        border-radius: 0 0 8px 8px;
+        text-transform: uppercase;
+    }
+
+    .menu-item[data-status="special"] h3 {
+        color: #d00000;
+    }
+
+    
+    .menu-item[data-status="special"]+.menu-item {
+        border-left-color: #9b5de5;
+        background-color: #f8f0fc;
+    }
+
+    .menu-item[data-status="special"]+.menu-item h3 {
+        color: #9b5de5;
+    }
+
+    
+    .menu-section[id="classic-flavors"]~.menu-section .price {
+       border: 2px solid #48cae4;
+    }
+
+    h6{
+        text-align: right;
+        color: crimson;
+        font-family: serif;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: capitalize;
+        font-style: italic;
+       
+    }        
+</style>
+</head>
+
+<body>
+
+    <div class="menu-card">
+        <header>
+            <h1>Scoops & Sprinkles</h1>
+            <p>Welcome to our sweet paradise! Every single scoop of our artisanal ice cream is hand-crafted daily in
+                small batches using 100% organic local dairy and completely fresh ingredients.</p>
+        </header>
+
+        <div class="menu-section" id="classic-flavors">
+            <h2>Classic Scoops</h2>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <div class="flavor-info">
+                        <h3>Madagascar Vanilla</h3>
+                        <p>Rich, creamy vanilla bean blend with real vanilla specks.</p>
+                    </div>
+                    <span class="price">Rs.110.50</span>
+                </div>
+
+                
+                <div class="menu-item" data-status="special">
+                    <div class="flavor-info">
+                        <h3>Hot Honey Hot Fudge</h3>
+                        <p>Dark chocolate fudge swirled with local spicy honey ribbon.</p>
+                    </div>
+                   <span class="price">Rs.215.50</span>
+                </div>
+
+                
+                <div class="menu-item">
+                    <div class="flavor-info">
+                        <h3>Lavender Dream</h3>
+                        <p>Infused floral organic lavender with a hint of wild berry juice.</p>
+                    </div>
+                    <span class="price">Rs.125.00</span>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="menu-section" id="exotic-flavors">
+            <h2>Exotic Sundaes</h2>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <div class="flavor-info">
+                        <h3>Matcha Mystic</h3>
+                        <p>Premium Uji matcha base layered with sweet red bean mochi chunks.</p>
+                    </div>
+                    <span class="price">Rs.256.50</span>
+                </div>
+                <div class="menu-item">
+                    <div class="flavor-info">
+                        <h3>Mango Tango Sticky Rice</h3>
+                        <p>Alphonso mango sorbet coupled with salted coconut cream dairy swirl.</p>
+                    </div>
+                    <span class="price">Rs.306.75</span><br>
+                    </div>
+                    <h6>made by anshitha yaline</h6>
+            </div>
+        </div>
+    </div><br>
+
+   </body>
